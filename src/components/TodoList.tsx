@@ -10,10 +10,10 @@ interface Props {
 }
 
 export const TodoList: React.FC<Props> = ({ todos, filter, onToggle, onDelete }) => {
-  const filtered = todos.filter(t => filter === 'todas' || (filter === 'pendientes' ? !t.status : t.status));
+  const filtered = todos.filter(t => filter === 'Todas' || (filter === 'Pendientes' ? !t.status : t.status));
 
   return (
-    <div className="todo-list">
+    <div className="list-group list-group-flush">
       {filtered.map(todo => <TodoItem key={todo.id} todo={todo} onToggle={onToggle} onDelete={onDelete} />)}
     </div>
   );

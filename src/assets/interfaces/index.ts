@@ -4,4 +4,4 @@ export interface Todo {
   status: boolean;
 }
 
-export type FilterType = 'todas' | 'pendientes' | 'completadas';
+export type FilterType = 'Todas' | 'Pendientes' | 'Completadas';

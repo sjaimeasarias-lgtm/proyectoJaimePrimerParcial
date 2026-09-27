@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { type FilterType } from '../assets/interfaces';
 
 interface Props {
@@ -6,22 +6,20 @@ interface Props {
   setFilter: (f: FilterType) => void;
 }
 
-export const TodoFilters: React.FC<Props> = ({ filter, setFilter }) => {
-  const tabs: FilterType[] = ['todas', 'pendientes', 'completadas'];
+export const TodoFilters: FC<Props> = ({ filter, setFilter }) => {
+  const tabs: FilterType[] = ['Todas', 'Pendientes', 'Completadas'];
 
   return (
-    <div className="filters-container">
-      <div className="tabs">
-        {tabs.map((t) => (
-          <button
-            key={t}
-            onClick={() => setFilter(t)}
-            className={filter === t ? 'active' : ''}
-          >
-            {t.charAt(0).toUpperCase() + t.slice(1)}
-          </button>
-        ))}
-      </div>
+    <div className="d-flex gap-2 mb-4">
+      {tabs.map((t) => (
+        <button 
+          key={t} 
+          onClick={() => setFilter(t)} 
+          className={`btn btn-sm rounded-pill px-3 ${filter === t ? 'btn-primary' : 'btn-outline-secondary'}`}
+        >
+          {t}
+        </button>
+      ))}
     </div>
   );
 };

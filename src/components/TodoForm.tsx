@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, type FC } from 'react';
 
 interface Props { onAdd: (descripcion: string) => void; }
 
-export const TodoForm: React.FC<Props> = ({ onAdd }) => {
+export const TodoForm: FC<Props> = ({ onAdd }) => {
   const [text, setText] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -13,9 +13,9 @@ export const TodoForm: React.FC<Props> = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="todo-form">
-      <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Nueva tarea..." />
-      <button type="submit">Agregar</button>
+    <form onSubmit={handleSubmit} className="d-flex gap-2 mb-4">
+      <input className="form-control" value={text} onChange={(e) => setText(e.target.value)} placeholder="Nueva tarea..." />
+      <button type="submit" className="btn btn-primary px-4">Agregar</button>
     </form>
   );
 };
