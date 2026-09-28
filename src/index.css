@@ -45,3 +45,15 @@ body {
   color: #1E3A8A;
   border-color: #1E3A8A;
 }
+
+.form-check-input:checked {
+  background-color: #d63384; /* Rosa para combinar con tu botón Agregar */
+  border-color: #d63384;
+}
+.form-check-input:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 0 0.25rem rgba(214, 51, 132, 0.25);
+}
+.form-check-input {
+  border-color: #d63384;
+}
