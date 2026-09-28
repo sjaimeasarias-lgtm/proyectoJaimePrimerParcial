@@ -9,18 +9,17 @@ interface Props {
 
 export const TodoItem: FC<Props> = ({ todo, onToggle, onDelete }) => {
   return (
-    <div className="d-flex align-items-center gap-3 py-3 border-bottom border-danger">
-      <input type="checkbox" className="form-check-input mt-0 bg-transparent border-danger" checked={todo.status} onChange={() => onToggle(todo.id)} />
-      {/* Aquí está el cambio: text-white-50 en lugar de text-muted */}
-      <span className={`flex-grow-1 ${todo.status ? 'text-decoration-line-through text-white-50' : 'text-white'}`}>
+    <div className="list-group-item d-flex align-items-center gap-3 py-3 px-0 border-bottom">
+      <input type="checkbox" className="form-check-input mt-0" checked={todo.status} onChange={() => onToggle(todo.id)} />
+      <span className={`flex-grow-1 ${todo.status ? 'text-decoration-line-through text-muted' : ''}`}>
         {todo.descripcion}
       </span>
-      <span className={`badge rounded-pill ${todo.status ? 'bg-success bg-opacity-25 text-success' : 'bg-danger bg-opacity-25 text-danger'}`}>
+      <span className={`badge rounded-pill ${todo.status ? 'bg-success bg-opacity-10 text-success' : 'bg-secondary bg-opacity-10 text-secondary'}`}>
         {todo.status ? 'Completada' : 'Pendiente'}
       </span>
       <div className="d-flex gap-2">
-        <button onClick={() => onToggle(todo.id)} className="btn btn-sm btn-outline-success border-0">✔</button>
-        <button onClick={() => onDelete(todo.id)} className="btn btn-sm btn-outline-danger border-0">🗑</button>
+        <button onClick={() => onToggle(todo.id)} className="btn btn-sm btn-outline-success">✔</button>
+        <button onClick={() => onDelete(todo.id)} className="btn btn-sm btn-outline-danger">🗑</button>
       </div>
     </div>
   );
