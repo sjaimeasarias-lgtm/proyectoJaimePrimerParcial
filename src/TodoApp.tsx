@@ -11,9 +11,9 @@ const App: FC = () => {
   const [filter, setFilter] = useState<FilterType>('Todas');
 
   return (
-    <div className="container my-5" style={{ maxWidth: '700px' }}>
-      <div className="card shadow-lg p-4">
-        <h4 className="fw-bold mb-4">✅ Mi Lista de Tareas</h4>
+    <div className="container d-flex justify-content-center align-items-center min-vh-100 py-4">
+      <div className="card p-4" style={{ width: '100%', maxWidth: '550px' }}>
+        <h4 className="fw-bold mb-4 text-white">Mi Lista de Tareas</h4>
         <TodoForm onAdd={addTodo} />
         <TodoFilters filter={filter} setFilter={setFilter} />
         <TodoList todos={todos} filter={filter} onToggle={toggleTodo} onDelete={deleteTodo} />

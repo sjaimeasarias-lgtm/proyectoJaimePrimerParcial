@@ -2,46 +2,66 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background: linear-gradient(135deg, #1E3A8A 0%, #7B2CBF 35%, #FF007F 70%, #FF8C42 100%);
+  background: 
+    radial-gradient(circle at 15% 30%, rgba(255, 26, 26, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(139, 0, 0, 0.2) 0%, transparent 50%),
+    #0a0a0a;
   background-attachment: fixed;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #f8f9fa; /* Texto claro para que contraste */
 }
 
-/* Tarjeta con efecto de vidrio para que resalte sobre el fondo */
+/* Tarjeta con efecto de vidrio oscuro y borde rojo tenue */
 .card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: none;
+  background: rgba(20, 5, 5, 0.85);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 26, 26, 0.3);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.15);
+  color: #ffffff;
 }
 
-/* Botón principal con gradiente neón (Magenta a Violeta) */
+/* Inputs oscuros con acentos rojos */
+.form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 26, 26, 0.4);
+  color: #ffffff;
+}
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FF1A1A;
+  color: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(255, 26, 26, 0.25);
+}
+.form-control::placeholder { color: rgba(255, 255, 255, 0.5); }
+
+/* Botón principal: Gradiente de Rojo Carmesí a Rojo Neón */
 .btn-gradient {
-  background: linear-gradient(90deg, #7B2CBF, #FF007F);
+  background: linear-gradient(90deg, #8B0000, #FF1A1A);
   border: none;
   color: white;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 .btn-gradient:hover {
-  background: linear-gradient(90deg, #FF007F, #7B2CBF);
+  background: linear-gradient(90deg, #FF1A1A, #8B0000);
   color: white;
   transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 26, 26, 0.6);
 }
 
-/* Botones de filtro inactivos */
+/* Botones de filtro inactivos: Rojo neón sobre fondo transparente */
 .btn-outline-custom {
-  border: 1px solid #7B2CBF;
-  color: #7B2CBF;
+  border: 1px solid #FF1A1A;
+  color: #FF1A1A;
   background: transparent;
-  font-weight: 500;
 }
 .btn-outline-custom:hover {
-  background: rgba(123, 44, 191, 0.1);
-  color: #1E3A8A;
-  border-color: #1E3A8A;
+  background: rgba(255, 26, 26, 0.15);
+  color: #ffffff;
+  border-color: #ffffff;
 }
+
+/* Ajustes para los textos y badges en modo oscuro */
+.text-muted { color: rgba(255, 255, 255, 0.5) !important; }
+.border-danger { border-color: rgba(255, 26, 26, 0.2) !important; }
