@@ -11,7 +11,8 @@ export const TodoItem: FC<Props> = ({ todo, onToggle, onDelete }) => {
   return (
     <div className="d-flex align-items-center gap-3 py-3 border-bottom border-danger">
       <input type="checkbox" className="form-check-input mt-0 bg-transparent border-danger" checked={todo.status} onChange={() => onToggle(todo.id)} />
-      <span className={`flex-grow-1 ${todo.status ? 'text-decoration-line-through text-muted' : 'text-white'}`}>
+      {/* Aquí está el cambio: text-white-50 en lugar de text-muted */}
+      <span className={`flex-grow-1 ${todo.status ? 'text-decoration-line-through text-white-50' : 'text-white'}`}>
         {todo.descripcion}
       </span>
       <span className={`badge rounded-pill ${todo.status ? 'bg-success bg-opacity-25 text-success' : 'bg-danger bg-opacity-25 text-danger'}`}>
