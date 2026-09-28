@@ -15,7 +15,7 @@ export const TodoForm: FC<Props> = ({ onAdd }) => {
   return (
     <form onSubmit={handleSubmit} className="d-flex gap-2 mb-4">
       <input className="form-control" value={text} onChange={(e) => setText(e.target.value)} placeholder="Nueva tarea..." />
-      <button type="submit" className="btn btn-gradient px-4">Agregar</button>
+      <button type="submit" className="btn btn-primary px-4">Agregar</button>
     </form>
   );
 };
