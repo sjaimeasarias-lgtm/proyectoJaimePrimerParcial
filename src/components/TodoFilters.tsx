@@ -15,7 +15,7 @@ export const TodoFilters: FC<Props> = ({ filter, setFilter }) => {
         <button 
           key={t} 
           onClick={() => setFilter(t)} 
-          className={`btn btn-sm rounded-pill px-3 ${filter === t ? 'btn-primary' : 'btn-outline-secondary'}`}
+          className={`btn btn-sm rounded-pill px-3 ${filter === t ? 'btn-gradient' : 'btn-outline-custom'}`}
         >
           {t}
         </button>

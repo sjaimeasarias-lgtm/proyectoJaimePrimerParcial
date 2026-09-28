@@ -2,5 +2,46 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #539be4; /* Un fondo gris claro para que resalte la tarjeta blanca */
+  background: linear-gradient(135deg, #1E3A8A 0%, #7B2CBF 35%, #FF007F 70%, #FF8C42 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tarjeta con efecto de vidrio para que resalte sobre el fondo */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón principal con gradiente neón (Magenta a Violeta) */
+.btn-gradient {
+  background: linear-gradient(90deg, #7B2CBF, #FF007F);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #FF007F, #7B2CBF);
+  color: white;
+  transform: scale(1.02);
+}
+
+/* Botones de filtro inactivos */
+.btn-outline-custom {
+  border: 1px solid #7B2CBF;
+  color: #7B2CBF;
+  background: transparent;
+  font-weight: 500;
+}
+.btn-outline-custom:hover {
+  background: rgba(123, 44, 191, 0.1);
+  color: #1E3A8A;
+  border-color: #1E3A8A;
 }
